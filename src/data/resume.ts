@@ -3,7 +3,7 @@ import type { ResumeData } from '../types/resume'
 export const defaultResume: ResumeData = {
   profile: {
     name: 'xx',
-    title: '计算机科学与技术 / 硕士',
+    title: '求职意向：后端工程师',
     gender: '男',
     birthDate: '2002.01',
     city: '上海',

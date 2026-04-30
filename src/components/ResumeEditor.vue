@@ -188,8 +188,8 @@ function fileToAvatarDataUrl(file: File): Promise<string> {
               <input v-model="resume.profile.name" type="text" placeholder="xx" />
             </label>
             <label>
-              标题
-              <input v-model="resume.profile.title" type="text" placeholder="计算机科学与技术 / 硕士" />
+              求职意向
+              <input v-model="resume.profile.title" type="text" placeholder="后端工程师" />
             </label>
             <label>
               性别
