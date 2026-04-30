@@ -215,10 +215,6 @@ function fileToAvatarDataUrl(file: File): Promise<string> {
               邮箱
               <input v-model="resume.profile.email" type="email" placeholder="name@example.com" />
             </label>
-            <label>
-              GitHub
-              <input v-model="resume.profile.github" type="text" placeholder="xx" />
-            </label>
           </div>
           <div class="avatar-field">
             <div class="avatar-preview" aria-label="头像预览">

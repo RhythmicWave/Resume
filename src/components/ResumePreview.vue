@@ -45,7 +45,6 @@ const metaItems = computed(() =>
     { icon: CircleUserRound, value: props.resume.profile.politicalStatus },
     { icon: Phone, value: props.resume.profile.phone },
     { icon: Mail, value: props.resume.profile.email },
-    { icon: Code2, value: props.resume.profile.github },
   ].filter((item) => item.value.trim()),
 )
 </script>

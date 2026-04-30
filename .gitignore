@@ -14,6 +14,7 @@ dist-ssr
 desktop-check.png
 mobile-check.png
 test-downloads/
+src/data/resume.ts
 
 # Editor directories and files
 .vscode/*
@@ -25,3 +26,7 @@ test-downloads/
 *.njsproj
 *.sln
 *.sw?
+
+findings.md
+progress.md
+task_plan.md

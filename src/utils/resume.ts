@@ -1,4 +1,4 @@
-import { defaultResume } from '../data/resume'
+import { defaultResume } from '../data/defaultResume'
 import type { ResumeData } from '../types/resume'
 
 export function cloneResume<T>(value: T): T {

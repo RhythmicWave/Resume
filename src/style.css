@@ -33,6 +33,7 @@
 body {
   min-width: 320px;
   margin: 0;
+  overflow: hidden;
 }
 
 button,
@@ -55,27 +56,29 @@ a {
 }
 
 #app {
-  min-height: 100svh;
+  height: 100svh;
 }
 
 .app-shell {
   display: grid;
   grid-template-columns: minmax(320px, 430px) minmax(0, 1fr);
-  min-height: 100svh;
+  height: 100svh;
+  overflow: hidden;
 }
 
 .editor-panel {
+  min-height: 0;
+  overflow: hidden;
   border-right: 1px solid rgba(32, 36, 42, 0.14);
   background: rgba(247, 248, 245, 0.94);
   backdrop-filter: blur(16px);
 }
 
 .editor-sticky {
-  position: sticky;
-  top: 0;
   display: flex;
   flex-direction: column;
-  height: 100svh;
+  height: 100%;
+  min-height: 0;
 }
 
 .editor-header {
@@ -181,6 +184,7 @@ a {
 }
 
 .editor-scroll {
+  min-height: 0;
   overflow: auto;
   padding: 0 18px 32px;
 }
@@ -389,13 +393,18 @@ textarea:focus {
 }
 
 .preview-workbench {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
   min-width: 0;
+  overflow: hidden;
 }
 
 .workbench-topbar {
-  position: sticky;
+  flex: 0 0 auto;
+  position: relative;
   z-index: 5;
-  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -415,9 +424,10 @@ textarea:focus {
 
 .paper-stage {
   display: grid;
+  flex: 1 1 auto;
   align-items: start;
   justify-items: center;
-  min-height: calc(100svh - 86px);
+  min-height: 0;
   overflow: auto;
   padding: 34px 24px 64px;
 }
@@ -646,13 +656,27 @@ textarea:focus {
 }
 
 @media (max-width: 1180px) {
+  body {
+    overflow: auto;
+  }
+
+  #app,
+  .app-shell {
+    height: auto;
+  }
+
   .app-shell {
     grid-template-columns: 1fr;
+    overflow: visible;
   }
 
   .editor-sticky {
-    position: relative;
     height: auto;
+  }
+
+  .preview-workbench {
+    height: auto;
+    overflow: visible;
   }
 
   .editor-scroll {
