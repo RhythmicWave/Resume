@@ -28,14 +28,14 @@ export const defaultResume: ResumeData = {
       major: '计算机科学与技术',
       degree: '硕士',
       period: '2022 - 2025',
-      details: ['保研，主要研究方向为 xxx'],
+      details: ['GPA：3.8 / 4.0，排名：前 10%'],
     },
     {
       school: '大学',
       major: '计算机科学与技术',
       degree: '本科',
       period: '2018 - 2022',
-      details: ['获得过 xxx 奖'],
+      details: ['GPA：3.7 / 4.0，核心课程：数据结构、操作系统、计算机网络'],
     },
   ],
   internships: [
