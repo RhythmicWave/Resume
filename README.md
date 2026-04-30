@@ -39,7 +39,7 @@ npm run build
 默认简历数据在：
 
 ```text
-src/data/resume.ts
+src/data/resume_template.ts
 ```
 
 页面里点击“重置示例”时，会恢复这里的默认配置。
