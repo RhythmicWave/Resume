@@ -624,6 +624,14 @@ textarea:focus {
   text-decoration: none;
 }
 
+.project-role {
+  font-weight: 600;
+}
+
+.project-tech {
+  color: #3a4148;
+}
+
 .compact-list {
   margin: 3px 0 0;
   padding-left: 16px;

@@ -137,7 +137,8 @@ const metaItems = computed(() =>
         <div class="entry-main">
           <div>
             <h3>{{ project.name }}</h3>
-            <p>{{ [project.role, project.techStack].filter(Boolean).join(' / ') }}</p>
+            <p v-if="project.role" class="project-role">{{ project.role }}</p>
+            <p v-if="project.techStack" class="project-tech">{{ project.techStack }}</p>
           </div>
           <span>{{ project.period }}</span>
         </div>
