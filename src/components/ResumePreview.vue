@@ -47,6 +47,12 @@ const metaItems = computed(() =>
     { icon: Mail, value: props.resume.profile.email },
   ].filter((item) => item.value.trim()),
 )
+
+function avatarBackgroundStyle(src: string): { backgroundImage: string } {
+  return {
+    backgroundImage: `url("${src}")`,
+  }
+}
 </script>
 
 <template>
@@ -75,7 +81,7 @@ const metaItems = computed(() =>
         </div>
       </div>
       <div v-if="resume.profile.avatar" class="avatar-frame">
-        <img :src="resume.profile.avatar" alt="头像" />
+        <div class="avatar-image" :style="avatarBackgroundStyle(resume.profile.avatar)" role="img" aria-label="头像" />
       </div>
     </header>
 

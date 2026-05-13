@@ -151,6 +151,12 @@ function fileToAvatarDataUrl(file: File): Promise<string> {
     reader.readAsDataURL(file)
   })
 }
+
+function avatarBackgroundStyle(src: string): { backgroundImage: string } {
+  return {
+    backgroundImage: `url("${src}")`,
+  }
+}
 </script>
 
 <template>
@@ -218,7 +224,13 @@ function fileToAvatarDataUrl(file: File): Promise<string> {
           </div>
           <div class="avatar-field">
             <div class="avatar-preview" aria-label="头像预览">
-              <img v-if="resume.profile.avatar" :src="resume.profile.avatar" alt="头像预览" />
+              <div
+                v-if="resume.profile.avatar"
+                class="avatar-image"
+                :style="avatarBackgroundStyle(resume.profile.avatar)"
+                role="img"
+                aria-label="头像预览"
+              />
               <ImagePlus v-else :size="24" aria-hidden="true" />
             </div>
             <div class="avatar-controls">
