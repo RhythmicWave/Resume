@@ -20,8 +20,11 @@ export async function exportResumePdf(element: HTMLElement, fileName: string): P
 
   const pageWidth = 210
   const pageHeight = 297
+  const pageOverflowTolerance = 2
   const imageWidth = pageWidth
-  const imageHeight = (canvas.height * imageWidth) / canvas.width
+  const rawImageHeight = (canvas.height * imageWidth) / canvas.width
+  const imageHeight =
+    Math.abs(rawImageHeight - pageHeight) <= pageOverflowTolerance ? pageHeight : rawImageHeight
   const imageData = canvas.toDataURL('image/png')
 
   let remainingHeight = imageHeight
@@ -30,7 +33,7 @@ export async function exportResumePdf(element: HTMLElement, fileName: string): P
   pdf.addImage(imageData, 'PNG', 0, position, imageWidth, imageHeight, undefined, 'FAST')
   remainingHeight -= pageHeight
 
-  while (remainingHeight > 0) {
+  while (remainingHeight > pageOverflowTolerance) {
     position -= pageHeight
     pdf.addPage()
     pdf.addImage(imageData, 'PNG', 0, position, imageWidth, imageHeight, undefined, 'FAST')
