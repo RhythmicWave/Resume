@@ -62,6 +62,8 @@ export interface CustomSection {
   items: string[]
 }
 
+export type ResumeTemplate = 'classic' | 'sidebar'
+
 export interface ResumeData {
   profile: Profile
   links: LinkItem[]
