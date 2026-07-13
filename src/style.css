@@ -1032,6 +1032,205 @@ textarea:focus {
   white-space: nowrap;
 }
 
+.resume-paper--sidebar {
+  grid-template-columns: 58mm minmax(0, 1fr);
+  min-height: 296mm;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.resume-paper--sidebar .sidebar-panel {
+  min-height: 296mm;
+  padding: 9mm 5mm 7mm;
+}
+
+.resume-paper--sidebar .sidebar-avatar {
+  width: 24mm;
+  height: 31mm;
+  margin-bottom: 5mm;
+}
+
+.resume-paper--sidebar .sidebar-profile h1 {
+  font-size: 22px;
+}
+
+.resume-paper--sidebar .sidebar-profile p {
+  margin-top: 3px;
+  font-size: 10.7px;
+  line-height: 1.18;
+}
+
+.resume-paper--sidebar .sidebar-block {
+  margin-top: 6.5mm;
+}
+
+.resume-paper--sidebar .sidebar-block h2 {
+  margin-bottom: 2.3mm;
+  padding-bottom: 1.4mm;
+  font-size: 12.4px;
+}
+
+.resume-paper--sidebar .sidebar-contact-list {
+  gap: 1.6mm;
+}
+
+.resume-paper--sidebar .sidebar-contact-item {
+  gap: 5px;
+  font-size: 10.4px;
+  line-height: 1.18;
+}
+
+.resume-paper--sidebar .sidebar-skill {
+  margin-bottom: 2.2mm;
+}
+
+.resume-paper--sidebar .sidebar-skill strong {
+  margin-bottom: 0.7mm;
+  font-size: 10.8px;
+}
+
+.resume-paper--sidebar .sidebar-skill-list {
+  gap: 0.45mm;
+}
+
+.resume-paper--sidebar .sidebar-skill-list li {
+  font-size: 10.1px;
+  line-height: 1.15;
+}
+
+.resume-paper--sidebar .sidebar-main {
+  padding: 8mm 7mm 8mm 8mm;
+}
+
+.resume-paper--sidebar .sidebar-section {
+  margin-bottom: 5.4mm;
+}
+
+.resume-paper--sidebar .sidebar-heading {
+  gap: 5px;
+  margin-bottom: 3.3mm;
+}
+
+.resume-paper--sidebar .sidebar-heading > span {
+  width: 18px;
+  height: 18px;
+}
+
+.resume-paper--sidebar .sidebar-heading h2 {
+  font-size: 15px;
+  line-height: 1.08;
+}
+
+.resume-paper--sidebar .sidebar-entry {
+  margin-bottom: 3.4mm;
+}
+
+.resume-paper--sidebar .sidebar-education-section .sidebar-entry {
+  margin-bottom: 2.5mm;
+}
+
+.resume-paper--sidebar .sidebar-project-entry {
+  margin-bottom: 4.6mm;
+}
+
+.resume-paper--sidebar .sidebar-entry.has-dot {
+  padding-left: 2.8mm;
+}
+
+.resume-paper--sidebar .sidebar-entry.has-dot::before {
+  top: 4px;
+  width: 4px;
+  height: 4px;
+  box-shadow: 0 0 0 2px #e7f6fb;
+}
+
+.resume-paper--sidebar .sidebar-entry-head {
+  gap: 7px;
+}
+
+.resume-paper--sidebar .sidebar-entry-head h3 {
+  font-size: 13.6px;
+  line-height: 1.24;
+}
+
+.resume-paper--sidebar .sidebar-entry-head p,
+.resume-paper--sidebar .sidebar-project-meta {
+  margin-top: 0;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.resume-paper--sidebar .sidebar-project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4mm 1.6mm;
+}
+
+.resume-paper--sidebar .sidebar-role-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.45mm 2mm;
+  color: #fff;
+  background: #4aaed1;
+  font-size: 10.2px;
+  font-weight: 800;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.resume-paper--sidebar .sidebar-entry-head time {
+  font-size: 11.8px;
+}
+
+.resume-paper--sidebar .sidebar-link {
+  margin-top: 1mm;
+  font-size: 11.5px;
+  line-height: 1.28;
+}
+
+.resume-paper--sidebar .sidebar-description {
+  margin-top: 1mm;
+  font-size: 12px;
+  line-height: 1.48;
+}
+
+.resume-paper--sidebar .sidebar-project-entry .sidebar-description {
+  margin-top: 1.1mm;
+}
+
+.resume-paper--sidebar .sidebar-bullet-list {
+  margin-top: 1mm;
+}
+
+.resume-paper--sidebar .sidebar-bullet-list li {
+  margin: 1.05mm 0;
+  padding-left: 9px;
+  font-size: 12px;
+  line-height: 1.48;
+}
+
+.resume-paper--sidebar .sidebar-bullet-list li::before {
+  top: 0.5em;
+  width: 3px;
+  height: 3px;
+}
+
+.resume-paper--sidebar .sidebar-awards-section {
+  margin-bottom: 0;
+}
+
+.resume-paper--sidebar .sidebar-simple-list {
+  gap: 1.8mm;
+}
+
+.resume-paper--sidebar .sidebar-simple-row {
+  gap: 4mm;
+  font-size: 12px;
+  line-height: 1.38;
+}
+
 @media (max-width: 1180px) {
   body {
     overflow: auto;
@@ -1112,6 +1311,11 @@ textarea:focus {
 }
 
 @media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
   :root {
     background: #fff;
   }

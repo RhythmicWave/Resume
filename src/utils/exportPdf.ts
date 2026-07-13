@@ -4,12 +4,19 @@ export async function exportResumePdf(element: HTMLElement, fileName: string): P
     import('jspdf'),
   ])
 
+  const width = Math.ceil(element.getBoundingClientRect().width)
+  const height = Math.ceil(element.getBoundingClientRect().height)
+
   const canvas = await html2canvas(element, {
     backgroundColor: '#ffffff',
     scale: Math.min(window.devicePixelRatio || 2, 3),
     useCORS: true,
-    windowWidth: element.scrollWidth,
-    windowHeight: element.scrollHeight,
+    width,
+    height,
+    windowWidth: width,
+    windowHeight: height,
+    scrollX: 0,
+    scrollY: 0,
   })
 
   const pdf = new jsPDF({
@@ -20,7 +27,7 @@ export async function exportResumePdf(element: HTMLElement, fileName: string): P
 
   const pageWidth = 210
   const pageHeight = 297
-  const pageOverflowTolerance = 2
+  const pageOverflowTolerance = 5
   const imageWidth = pageWidth
   const rawImageHeight = (canvas.height * imageWidth) / canvas.width
   const imageHeight =

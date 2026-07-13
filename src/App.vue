@@ -110,10 +110,8 @@ async function handleExport(): Promise<void> {
   await nextTick()
 
   try {
-    paper.style.transform = 'none'
     await exportResumePdf(paper, fileName.value)
   } finally {
-    paper.style.removeProperty('transform')
     isExporting.value = false
   }
 }

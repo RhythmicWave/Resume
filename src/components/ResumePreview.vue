@@ -130,7 +130,7 @@ function avatarBackgroundStyle(src: string): { backgroundImage: string } {
           <p class="sidebar-summary">{{ resume.profile.summary }}</p>
         </section>
 
-        <section v-if="visibleEducation.length" class="sidebar-section">
+        <section v-if="visibleEducation.length" class="sidebar-section sidebar-education-section">
           <div class="sidebar-heading">
             <span><GraduationCap :size="13" stroke-width="2.7" aria-hidden="true" /></span>
             <h2>教育背景</h2>
@@ -153,21 +153,25 @@ function avatarBackgroundStyle(src: string): { backgroundImage: string } {
           </div>
         </section>
 
-        <section v-if="visibleProjects.length" class="sidebar-section">
+        <section v-if="visibleProjects.length" class="sidebar-section sidebar-project-section">
           <div class="sidebar-heading">
             <span><UsersRound :size="13" stroke-width="2.7" aria-hidden="true" /></span>
             <h2>项目经历</h2>
           </div>
-          <div v-for="project in visibleProjects" :key="`${project.name}-${project.period}`" class="sidebar-entry">
+          <div
+            v-for="project in visibleProjects"
+            :key="`${project.name}-${project.period}`"
+            class="sidebar-entry sidebar-project-entry"
+          >
             <div class="sidebar-entry-head">
               <div>
                 <h3>{{ project.name }}</h3>
-                <p v-if="project.techStack">{{ project.techStack }}</p>
+                <p v-if="project.role || project.techStack" class="sidebar-project-meta">
+                  <span v-if="project.role" class="sidebar-role-pill">{{ project.role }}</span>
+                  <span v-if="project.techStack">{{ project.techStack }}</span>
+                </p>
               </div>
               <time>{{ project.period }}</time>
-            </div>
-            <div v-if="project.role" class="sidebar-entry-meta">
-              <span>{{ project.role }}</span>
             </div>
             <a v-if="project.link" class="sidebar-link" :href="project.link" target="_blank" rel="noreferrer">
               {{ project.link }}
@@ -222,7 +226,7 @@ function avatarBackgroundStyle(src: string): { backgroundImage: string } {
           </div>
         </section>
 
-        <section v-if="visibleAwards.length || visibleScholarships.length" class="sidebar-section">
+        <section v-if="visibleAwards.length || visibleScholarships.length" class="sidebar-section sidebar-awards-section">
           <div class="sidebar-heading">
             <span><Trophy :size="13" stroke-width="2.7" aria-hidden="true" /></span>
             <h2>荣誉奖励</h2>
